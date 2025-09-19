@@ -1,8 +1,28 @@
 {
-    "mcpServers": {
-      "kubernetes": {
-        "command": "npx",
-        "args": ["-y", "kubernetes-mcp-server@latest"]
-      }
+  "mcpServers": {
+    "kubernetes Docs": {
+      "url": "https://gitmcp.io/kubernetes/kubernetes"
+    },
+    "postgres Docs": {
+      "url": "https://gitmcp.io/postgres/postgres"
+    },
+    "redis Docs": {
+      "url": "https://gitmcp.io/redis/redis"
+    },
+    "docker Docs": {
+      "url": "https://gitmcp.io/docker/compose"
+    },
+    "kustomize Docs": {
+      "url": "https://gitmcp.io/kubernetes-sigs/kustomize"
+    },
+    "Headlamp Docs": {
+      "url": "https://gitmcp.io/kubernetes-sigs/headlamp"
+    },
+    "helm Docs": {
+      "url": "https://gitmcp.io/helm/helm"
+    },
+    "Ingress Nginx Docs": {
+      "url": "https://gitmcp.io/kubernetes/ingress-nginx"
     }
   }
+}
