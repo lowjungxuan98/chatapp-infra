@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: chatapp
-        image: chatapp:666
+        image: ghcr.io/lowjungxuan98/chatapp-development:17
         ports:
         - containerPort: 3000
         envFrom:
