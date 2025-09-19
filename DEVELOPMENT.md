@@ -1,6 +1,10 @@
 # 开发指南
 
-## Phase 0: 项目架构
+## Phase 0: Kubernetes 安装和项目架构
+
+### Kubernetes 安装指南
+
+详细的 Kubernetes 安装步骤请参考：[Kubernetes 安装指南](docs/00.md)
 
 ### 项目结构
 ```
