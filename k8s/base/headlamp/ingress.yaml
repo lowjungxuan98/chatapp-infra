@@ -3,10 +3,17 @@ kind: Ingress
 metadata:
   name: headlamp
   namespace: default
+  annotations:
+    # cert-manager 注解
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - lowjungxuan.duckdns.org
+    secretName: headlamp-tls
   rules:
-  - host: localhost
+  - host: lowjungxuan.duckdns.org
     http:
       paths:
       - path: /headlamp

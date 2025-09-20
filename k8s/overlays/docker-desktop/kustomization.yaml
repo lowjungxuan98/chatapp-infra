@@ -3,10 +3,3 @@ kind: Kustomization
 
 resources:
   - ../../base
-
-patches:
-  - target:
-      kind: Service
-      name: ingress-nginx-controller
-      namespace: ingress-nginx
-    path: patches/ingress-nginx-service-nodeport.yaml
