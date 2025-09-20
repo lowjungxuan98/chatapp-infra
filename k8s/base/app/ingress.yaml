@@ -11,24 +11,29 @@ metadata:
     nginx.ingress.kubernetes.io/affinity: "cookie"
     nginx.ingress.kubernetes.io/session-cookie-name: "io"
     nginx.ingress.kubernetes.io/session-cookie-path: "/"
+    # cert-manager 注解
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - lowjungxuan.duckdns.org
+    secretName: chatapp-tls
   rules:
-    # - host: localhost
-    #   http:
-    - http:
-        paths:
-          - path: /socket.io
-            pathType: Prefix
-            backend:
-              service:
-                name: chatapp-service
-                port:
-                  number: 80
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: chatapp-service
-                port:
-                  number: 80
+  - host: lowjungxuan.duckdns.org
+    http:
+      paths:
+        - path: /socket.io
+          pathType: Prefix
+          backend:
+            service:
+              name: chatapp-service
+              port:
+                number: 80
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: chatapp-service
+              port:
+                number: 80

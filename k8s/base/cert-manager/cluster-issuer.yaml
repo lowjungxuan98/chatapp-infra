@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    # Let's Encrypt 生产环境服务器
+    server: https://acme-v02.api.letsencrypt.org/directory
+    # 用于注册的邮箱地址
+    email: lowjungxuan98@gmail.com
+    # 私钥存储的 Secret 名称
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    # 使用 HTTP-01 挑战验证域名所有权
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
