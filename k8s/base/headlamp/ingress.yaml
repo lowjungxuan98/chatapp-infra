@@ -6,8 +6,9 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: localhost
-    http:
+    # - host: localhost
+    #   http:
+  - http:
       paths:
       - path: /headlamp
         pathType: Prefix

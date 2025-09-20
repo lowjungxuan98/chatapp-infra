@@ -20,7 +20,7 @@ k8s/
 │  │  └─ ingress.yaml
 │  ├─ ingress-nginx/
 │  │  ├─ kustomization.yaml
-│  │  └─ svc-nodeport-patch.yaml   # make controller Service NodePort on Docker Desktop
+│  │  └─ svc-nodeport-patch.yaml   # LoadBalancer service for VPC deployment
 │  ├─ db/
 │  │  ├─ kustomization.yaml           # 数据库资源聚合配置
 │  │  ├─ postgres/
@@ -31,6 +31,10 @@ k8s/
 │  │     ├─ kustomization.yaml
 │  │     ├─ statefulset.yaml
 │  │     └─ service.yaml
+│  ├─ storage/
+│  │  ├─ kustomization.yaml
+│  │  ├─ storageclass.yaml
+│  │  └─ persistent-volumes.yaml   # local storage for PostgreSQL and Redis
 │  ├─ secrets/
 │  │  ├─ kustomization.yaml        # references secret.yaml
 │  │  └─ secret.yaml               # standard Kubernetes Secret with Base64 encoded data
@@ -41,9 +45,7 @@ k8s/
 │     └─ ingress.yaml
 └─ overlays/
    └─ docker-desktop/
-      ├─ kustomization.yaml
-      └─ patches/
-         └─ ingress-nginx-service-nodeport.yaml  # (alt location, if you prefer)
+      └─ kustomization.yaml
 ```
 
 ### 技术栈
@@ -76,3 +78,7 @@ Headlamp 管理界面配置和访问说明请参考：[Headlamp 配置](docs/05.
 ## Phase 6: 完整部署指南
 
 完整的部署流程和操作指南请参考：[部署指南](docs/06.md)
+
+## Phase 7: VPC 部署检查清单
+
+从本地部署迁移到 VPC 部署的配置更改请参考：[VPC 部署检查清单](docs/07.md)

@@ -6,20 +6,17 @@ metadata:
   labels:
     app: chatapp
   annotations:
-    # Keep connections alive long enough for polling/websockets
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-    # Sticky sessions (helps if polling falls back and you have >1 replica)
     nginx.ingress.kubernetes.io/affinity: "cookie"
     nginx.ingress.kubernetes.io/session-cookie-name: "io"
     nginx.ingress.kubernetes.io/session-cookie-path: "/"
-    # nginx.ingress.kubernetes.io/rewrite-target: /
-    # nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   rules:
-    - host: localhost
-      http:
+    # - host: localhost
+    #   http:
+    - http:
         paths:
           - path: /socket.io
             pathType: Prefix
