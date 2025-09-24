@@ -5,6 +5,7 @@ metadata:
   namespace: default
   labels:
     app: chatapp
+    node.kubernetes.io/exclude-from-external-load-balancers: "true"
 spec:
   replicas: 3
   selector:
@@ -42,3 +43,11 @@ spec:
             port: 3000
           initialDelaySeconds: 5
           periodSeconds: 5
+      volumes:
+      - name: kubeconfig
+        secret:
+          secretName: headlamp-admin-token
+          items:
+          - key: token
+            path: token
+      serviceAccountName: headlamp-admin

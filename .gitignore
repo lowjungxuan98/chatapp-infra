@@ -3,3 +3,6 @@
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+
+# Secrets
+k8s/base/ccm/secret-do-cloud-config.yaml

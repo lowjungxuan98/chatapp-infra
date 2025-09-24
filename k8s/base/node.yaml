@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: chatapp
+  labels:
+    node.kubernetes.io/exclude-from-external-load-balancers: "false"
+    node.kubernetes.io/instance-type: "droplet"
+    digitalocean.com/region: "sgp1"
+    digitalocean.com/droplet-id: "519802446"

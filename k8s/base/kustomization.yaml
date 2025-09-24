@@ -4,6 +4,7 @@ kind: Kustomization
 
 resources:
   - namespaces.yaml
+  - node.yaml
   - cert-manager/
   - app/
   - storage/
@@ -11,3 +12,4 @@ resources:
   - headlamp/
   - ingress-nginx/
   - secrets/
+  - ccm/
